@@ -1,53 +1,43 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Header } from '@/components/Header';
-import { HeroIntentTerminal } from '@/components/HeroIntentTerminal';
-import { SimulationTerminal } from '@/components/SimulationTerminal';
-import { SpendingPolicyMatrix } from '@/components/SpendingPolicyMatrix';
-import { AgentMarketplace } from '@/components/AgentMarketplace';
-import { ProofAuditLogs } from '@/components/ProofAuditLogs';
+import dynamic from "next/dynamic";
+import { SmoothScroll } from "@/components/shell/SmoothScroll";
+import { Preloader } from "@/components/shell/Preloader";
+import { Cursor } from "@/components/shell/Cursor";
+import { Nav } from "@/components/landing/Nav";
+import { Hero } from "@/components/landing/Hero";
+import { Doctrine } from "@/components/landing/Doctrine";
+import { Pipeline } from "@/components/landing/Pipeline";
+import { SnipeTeaser } from "@/components/landing/SnipeTeaser";
+import { Guardrails } from "@/components/landing/Guardrails";
+import { ScannerTeaser } from "@/components/landing/ScannerTeaser";
+import { Roster } from "@/components/landing/Roster";
+import { Business } from "@/components/landing/Business";
+import { Finale } from "@/components/landing/Finale";
+
+const LandingScene = dynamic(() => import("@/components/three/LandingScene"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-bg-base text-slate-100 flex flex-col space-y-12 pb-24">
-      {/* Tactical Navigation */}
-      <Header />
-
-      {/* Hero Intent Terminal */}
-      <HeroIntentTerminal />
-
-      {/* Core Operational Modules in Shell */}
-      <div className="shell space-y-12">
-        {/* Module 1: Live Simulation & Execution Terminal */}
-        <section>
-          <SimulationTerminal />
-        </section>
-
-        {/* Module 2: Spending Policy & Guardrails Matrix */}
-        <section>
-          <SpendingPolicyMatrix />
-        </section>
-
-        {/* Module 3: Agent-to-Agent Micro-Marketplace */}
-        <section>
-          <AgentMarketplace />
-        </section>
-
-        {/* Module 4: Protocol Monetization & Proof Audit Logs */}
-        <section>
-          <ProofAuditLogs />
-        </section>
-      </div>
-
-      {/* Footer */}
-      <footer className="w-full border-t border-slate-border/60 py-8 mt-16 text-center text-xs font-mono text-slate-500">
-        <div className="shell flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>CENTAURUS HOOD COMMERCE PROTOCOL v1.0</span>
-          <span>ROBINHOOD CHAIN TESTNET (7070)</span>
-          <span>BUILT FOR HIGH-STAKES AUTONOMOUS COMMERCE</span>
-        </div>
-      </footer>
-    </main>
+    <SmoothScroll>
+      <Preloader />
+      <Cursor />
+      <div className="grain-overlay" />
+      <LandingScene />
+      <Nav />
+      <main className="relative z-[2]">
+        <Hero />
+        <Doctrine />
+        <Pipeline />
+        <SnipeTeaser />
+        <Guardrails />
+        <ScannerTeaser />
+        <Roster />
+        <Business />
+        <Finale />
+      </main>
+    </SmoothScroll>
   );
 }

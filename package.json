@@ -1,34 +1,38 @@
 {
   "name": "hood-commerce",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@rainbow-me/rainbowkit": "^2.1.2",
+    "@fontsource-variable/archivo": "^5.2.8",
+    "@fontsource-variable/fraunces": "^5.2.10",
+    "@fontsource-variable/martian-mono": "^5.2.8",
+    "@react-three/drei": "^9.114.6",
+    "@react-three/fiber": "^8.17.10",
     "@tanstack/react-query": "^5.50.0",
-    "@x402/core": "^2.21.0",
-    "@x402/evm": "^2.21.0",
-    "@x402/svm": "^2.21.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.8",
+    "lenis": "^1.1.18",
     "lucide-react": "^0.396.0",
-    "next": "14.2.24",
+    "next": "^14.2.35",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.4.0",
-    "viem": "^2.17.0",
-    "wagmi": "^2.12.0"
+    "three": "^0.169.0",
+    "viem": "^2.17.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "autoprefixer": "^10.5.4",
+    "@types/three": "^0.169.0",
+    "autoprefixer": "^10.4.19",
+    "playwright": "^1.62.1",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3"
